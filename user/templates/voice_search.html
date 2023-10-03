@@ -1,0 +1,33 @@
+<!-- voice_search.html -->
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Voice Search</title>
+</head>
+<body>
+    <h1>Voice Search</h1>
+    <div id="output"></div>
+    <button id="startButton">Start Voice Search</button>
+
+    <script>
+        const output = document.getElementById('output');
+        const startButton = document.getElementById('startButton');
+
+        const recognition = new (window.SpeechRecognition || window.webkitSpeechRecognition || window.mozSpeechRecognition || window.msSpeechRecognition)();
+        recognition.lang = 'en-US';
+
+        recognition.onstart = function() {
+            output.innerHTML = 'Listening...';
+        };
+
+        recognition.onresult = function(event) {
+            const transcript = event.results[0][0].transcript;
+            output.innerHTML = `You said: ${transcript}`;
+        };
+
+        startButton.addEventListener('click', function() {
+            recognition.start();
+        });
+    </script>
+</body>
+</html>

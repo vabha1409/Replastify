@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Language Translator</title>
+</head>
+<body>
+    <h1>Language Translator</h1>
+    <form id="translation-form">
+        <textarea id="text" rows="4" cols="50" placeholder="Enter text to translate"></textarea>
+        <select id="target-lang">
+            <option value="en">English</option>
+            <option value="es">Spanish</option>
+            <!-- Add more language options here -->
+        </select>
+        <button type="button" onclick="translateText()">Translate</button>
+    </form>
+    <div id="translated-text"></div>
+
+    <script>
+        function translateText() {
+            const text = document.getElementById('text').value;
+            const targetLang = document.getElementById('target-lang').value;
+
+            fetch('', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/x-www-form-urlencoded',
+                    'X-CSRFToken': getCookie('csrftoken')
+                },
+                body: `text=${text}&target_lang=${targetLang}`
+            })
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById('translated-text').innerHTML = data.translated_text;
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        }
+
+        function getCookie(name) {
+            var cookieValue = null;
+            if (document.cookie && document.cookie !== '') {
+                var cookies = document.cookie.split(';');
+                for (var i = 0; i < cookies.length; i++) {
+                    var cookie = cookies[i].trim();
+                    if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                        cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                        break;
+                    }
+                }
+            }
+            return cookieValue;
+        }
+    </script>
+
+
+
+
+</body>
+</html>

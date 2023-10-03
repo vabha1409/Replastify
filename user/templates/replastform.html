@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Replastify Services</title>
+    <link rel="stylesheet" href="styles.css">
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+
+    <title>Details</title>
+    <meta content="" name="description" />
+    <meta content="" name="keywords" />
+
+    <!-- Favicons -->
+    <link href="/static/assets/img/project-logo.jpg" rel="icon" />
+    <link href="/static/assets/img/apple-touch-icon.png" rel="apple-touch-icon" />
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,600;1,700&family=Roboto:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Work+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Vendor CSS Files -->
+    <link
+      href="/static/assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="/static/assets/vendor/fontawesome-free/css/all.min.css"
+      rel="stylesheet"
+    />
+    <link href="/static/assets/vendor/aos/aos.css" rel="stylesheet" />
+    <link
+      href="/static/assets/vendor/glightbox/css/glightbox.min.css"
+      rel="stylesheet"
+    />
+    <link href="/static/assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet" />
+
+    <!-- Template Main CSS File -->
+    <link href="/static/assets/css/main.css" rel="stylesheet" />
+
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    background-color: #fff;
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.center-heading {
+    text-align: center;
+}
+
+.logo-text {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.logo img {
+    max-width: 100px;
+    margin-right: 20px;
+}
+
+.intro-text {
+    flex-grow: 1;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    gap: 10px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="url"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+   <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="/" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <!-- <img src="assets/img/logo.png" alt=""> -->
+        <h1>Replastify<span></span></h1>
+      </a>
+
+      <i class="mobile-nav-toggle mobile-nav-show bi bi-list"></i>
+      <i class="mobile-nav-toggle mobile-nav-hide d-none bi bi-x"></i>
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="/">Home</a></li>
+          <li><a href="/about/">About</a></li>
+          <li><a href="/services/" class="active">Services</a></li>
+          <li><a href="/projects/">Projects</a></li>
+          <li><a href="/blog/">Blog</a></li>
+<!--          <li class="dropdown"><a href="#"><span>Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>-->
+<!--            <ul>-->
+<!--              <li><a href="#">Dropdown 1</a></li>-->
+<!--              <li class="dropdown"><a href="#"><span>Deep Dropdown</span> <i class="bi bi-chevron-down dropdown-indicator"></i></a>-->
+<!--                <ul>-->
+<!--                  <li><a href="#">Deep Dropdown 1</a></li>-->
+<!--                  <li><a href="#">Deep Dropdown 2</a></li>-->
+<!--                  <li><a href="#">Deep Dropdown 3</a></li>-->
+<!--                  <li><a href="#">Deep Dropdown 4</a></li>-->
+<!--                  <li><a href="#">Deep Dropdown 5</a></li>-->
+<!--                </ul>-->
+<!--              </li>-->
+<!--              <li><a href="#">Dropdown 2</a></li>-->
+<!--              <li><a href="#">Dropdown 3</a></li>-->
+<!--              <li><a href="#">Dropdown 4</a></li>-->
+<!--            </ul>-->
+<!--          </li>-->
+          <li><a href="/contact/">Contact</a></li>
+        </ul>
+        <ul>
+          <li><a href="/login/">login</a></li>
+          {% if user.is_authenticated %}
+          <li><a href="/logout/">logout</a></li>
+          {% endif %}
+<!--          <li><button id="theme-toggle">Toggle Theme</button></li>-->
+        </ul>
+      </nav><!-- .navbar -->
+
+    </div>
+  </header><!-- End Header -->
+
+      <!-- ======= Breadcrumbs ======= -->
+      <div
+        class="breadcrumbs d-flex align-items-center"
+        style="background-image: url('/static/assets/img/breadcrumbs-bg.jpg')"
+      >
+        <div
+          class="container position-relative d-flex flex-column align-items-center"
+          data-aos="fade"
+        >
+          <h2>Service Details</h2>
+          <ol>
+            <li><a href="/">Home</a></li>
+            <li>Service Details</li>
+          </ol>
+        </div>
+      </div>
+      <!-- End Breadcrumbs -->
+    <div class="container">
+        <h2 class="center-heading">Replastify Services</h2>
+        <div class="logo-text">
+            <div class="logo">
+                <img src="/static/assets/img/services/replastify.jpg" alt="Your Logo">
+            </div>
+            <div class="intro-text">
+                <p>Thank you for your interest in working with Ecovative’s Foundry and Innovation Lab to custom develop mycelium solutions for your business needs. We evaluate every inquiry, but can only reach out to those that will be best suited to work with our Foundry Services Team.</p>
+                <p>If you have previously submitted and the information is the same, we ask you to wait at least ONE year from the date of your previous inquiry. We review all applications throughout the year.</p>
+            </div>
+        </div>
+        <form method="post">
+            {% csrf_token %}
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" id="first-name" name="firstname" placeholder="First name*" required>
+                    <input type="text" id="last-name" name="lastname" placeholder="Last name*" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="text" id="industry" name="industry" placeholder="Industry*" required>
+                <input type="text" id="business-name" name="bn" placeholder="Business name*" required>
+            </div>
+            <div class="form-group">
+                <input type="url" id="website-url" name="wu" placeholder="Website URL*" required>
+            </div>
+            <div class="form-group">
+                <div class="input-group">
+                    <input type="text" id="job-title" name="jt" placeholder="Job title*" required>
+                    <input type="number" id="years-in-field" name="years" placeholder="Years in your field*" required>
+                </div>
+            </div>
+            <div class="form-group">
+                <input type="email" id="email" name="email" placeholder="Email*" required>
+                <input type="tel" id="phone" name="number" placeholder="Phone number*" required>
+            </div>
+            <div class="form-group">
+                <textarea id="how-can-we-help" name="howhelp" rows="4" placeholder="How can we help?*" required></textarea>
+            </div>
+            <div class="form-group">
+                <button type="submit" value="submit">Submit</button>
+            </div>
+        </form>
+    </div>
+
+    
+</body>
+</html>
